@@ -1,4 +1,4 @@
-import { Component,Input} from '@angular/core';
+import { Component,computed,Input,input} from '@angular/core';
 
 
 @Component({
@@ -11,7 +11,9 @@ import { Component,Input} from '@angular/core';
 export class UserComponent {
   @Input({required:true}) avatar!:string;
   @Input({required:true}) name!:string;
-
+  //avatar = input.required<string>()
+  //name = input.required<string>()
+  //imagePath = computed(()=>'assets/users/'+this.avatar())  lazim olsa prop sonuna moterize artir
   get imagePath(){
     return 'assets/users/' + this.avatar;
   }
