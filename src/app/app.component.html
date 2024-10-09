@@ -2,10 +2,12 @@
 <main>
   <ul id="users">
     @for (item of users; track item.id) {
-      <li>
-        <app-user [user]="item" (selectedUser)="userClicked($event)"/>
-      </li>
+      <!-- @if (item.name.startsWith("P")) { -->
+        <li>
+          <app-user [user]="item" (selectedUser)="userClicked($event)"/>
+        </li>
+      <!-- } -->
     }
   </ul>
-  <app-tasks [userName]="userNamefID"/>
+  <app-tasks [userName]="userNameForID"/>
 </main>

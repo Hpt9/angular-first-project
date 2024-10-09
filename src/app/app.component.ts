@@ -13,11 +13,11 @@ import { TasksComponent } from "./tasks/tasks.component";
 })
 export class AppComponent {
   users = DUMMY_USERS;
-  selectedID:string = 'u1';
+  selectedID?:string;
   newName = ''
-  get userNamefID (){
+  get userNameForID (){
     if (this.users.find((user)=>user.id===this.selectedID)===undefined) {
-      return "No this user"
+      return "Select User to show tasks"
     } else {
       return this.users.find((user)=>user.id===this.selectedID)!.name
       
