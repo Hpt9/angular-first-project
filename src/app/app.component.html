@@ -3,11 +3,18 @@
   <ul id="users">
     @for (item of users; track item.id) {
       <!-- @if (item.name.startsWith("P")) { -->
+
+        <!-- <li *ngFor="let item of users"> old version of for-->
         <li>
           <app-user [user]="item" (selectedUser)="userClicked($event)"/>
         </li>
       <!-- } -->
     }
   </ul>
-  <app-tasks [userName]="userNameForID"/>
+  <!-- <p *ngIf="8>7;else fallback">
+    cox uzundu
+  </p>
+  <ng-template #fallback>salam</ng-template> 
+  kohne versiye if else
+  -->
 </main>
