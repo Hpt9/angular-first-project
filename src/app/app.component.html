@@ -17,4 +17,9 @@
   <ng-template #fallback>salam</ng-template> 
   kohne versiye if else
   -->
+  @if (userNameForID) {
+    <app-tasks [userName]="userNameForID.name" [id]="userNameForID.id"/>
+  }@else {
+    <p>Please Select User</p>
+  }
 </main>

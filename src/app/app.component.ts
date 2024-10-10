@@ -14,15 +14,11 @@ import { NgFor,NgIf } from '@angular/common';
 })
 export class AppComponent {
   users = DUMMY_USERS;
+  err = {name:"Select User to show tasks"}
   selectedID?:string;
   newName = ''
   get userNameForID (){
-    if (this.users.find((user)=>user.id===this.selectedID)===undefined) {
-      return "Select User to show tasks"
-    } else {
-      return this.users.find((user)=>user.id===this.selectedID)!.name
-      
-    };
+      return this.users.find((user)=>user.id===this.selectedID)!
   }
   userClicked (id:string){
     this.selectedID=id

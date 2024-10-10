@@ -11,7 +11,7 @@ interface User {
   standalone: true,
   imports: [],
   templateUrl: './user.component.html',
-  styleUrl: './user.component.css'
+  styleUrl: './user.component.scss'
 })
 export class UserComponent {
   @Input({required:true}) user!:User;
