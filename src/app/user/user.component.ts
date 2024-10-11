@@ -15,6 +15,7 @@ interface User {
 })
 export class UserComponent {
   @Input({required:true}) user!:User;
+  @Input({required:true}) isSelected!:boolean;
   @Output() selectedUser= new EventEmitter<string>();
   @Output() sUserName = new EventEmitter<string>();
   //selectedUser = output<string>()

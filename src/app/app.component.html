@@ -6,7 +6,7 @@
 
         <!-- <li *ngFor="let item of users"> old version of for-->
         <li>
-          <app-user [user]="item" (selectedUser)="userClicked($event)"/>
+          <app-user [user]="item" (selectedUser)="userClicked($event)" [isSelected]="item.id===selectedID"/>
         </li>
       <!-- } -->
     }

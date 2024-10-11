@@ -8,7 +8,7 @@
     <ul>
         @for (item of userTasks; track $index) {
             <li>
-                <app-task [task]="item"/>
+                <app-task [task]="item" (complete)="taskComplete($event)"/>
             </li>
         }
     </ul>
