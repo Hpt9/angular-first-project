@@ -1,4 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
+import { DatePipe } from '@angular/common';
+import { TasksService } from '../tasks.service';
 interface TaskOBJ{
   id: string;
   userId: string;
@@ -9,15 +11,14 @@ interface TaskOBJ{
 @Component({
   selector: 'app-task',
   standalone: true,
-  imports: [],
+  imports: [DatePipe],
   templateUrl: './task.component.html',
   styleUrl: './task.component.scss'
 })
 export class TaskComponent {
-  @Output() complete = new EventEmitter<string>()
   @Input({required:true}) task!:TaskOBJ;
-
+  private taskService = inject(TasksService)
   taskComplete(){
-    this.complete.emit(this.task.id)
+    this.taskService.removeTask(this.task.id)
   }
 }

@@ -1,17 +1,21 @@
+@if (isModalOpen) {
+    <app-new-task (modalClosed)="endAddingTask()" [userId]="id"/>
+}
 <section id="tasks">
     <header>
         <h2>{{userName}}'s Tasks</h2>
         <menu>
-            <button>Add Task</button>
+            <button (click)="startAddingTask()">Add Task</button>
         </menu>
     </header>
     <ul>
         @for (item of userTasks; track $index) {
             <li>
-                <app-task [task]="item" (complete)="taskComplete($event)"/>
+                <app-task [task]="item" />                 
             </li>
         }
     </ul>
+    
 </section>
 
 
