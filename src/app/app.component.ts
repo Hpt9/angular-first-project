@@ -8,8 +8,8 @@ import { NewTaskComponent } from "./tasks/new-task/new-task.component";
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [HeaderComponent, UserComponent, TasksComponent, NgFor, NgIf],
+  standalone: false,
+  //imports: [HeaderComponent, UserComponent, TasksComponent, NgFor, NgIf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

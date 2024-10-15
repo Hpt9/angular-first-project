@@ -1,5 +1,4 @@
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
-import { DatePipe } from '@angular/common';
 import { TasksService } from '../tasks.service';
 interface TaskOBJ{
   id: string;
@@ -10,8 +9,7 @@ interface TaskOBJ{
 }
 @Component({
   selector: 'app-task',
-  standalone: true,
-  imports: [DatePipe],
+  standalone: false,
   templateUrl: './task.component.html',
   styleUrl: './task.component.scss'
 })

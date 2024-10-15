@@ -17,8 +17,7 @@ interface Task {
 }
 @Component({
   selector: 'app-tasks',
-  standalone: true,
-  imports: [TaskComponent, NewTaskComponent],
+  standalone: false,
   templateUrl: './tasks.component.html',
   styleUrl: './tasks.component.scss'
 })
